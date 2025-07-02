@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_quiz/data/api_questions.dart';
+//import 'package:flutter_quiz/data/api_questions.dart';
 
 //(paso 2) Texto que se mostrará en pantalla
 class StartScreen extends StatelessWidget {
