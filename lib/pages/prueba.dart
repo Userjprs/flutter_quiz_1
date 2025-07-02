@@ -3,9 +3,6 @@ import 'package:flutter/rendering.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-//void main() {
-//  runApp(MyApp());
-//}
 
 class MyApprueba extends StatelessWidget {
   const MyApprueba({super.key});
@@ -48,59 +45,7 @@ class _QuizPageState extends State<QuizPage> {
     obtenerQuizzes();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('QUIZ'),
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: <Color>[const Color(0xFF417690), const Color(0xFF417690)],
-            ),
-          ),
-        ),
-      ),
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          return SingleChildScrollView(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(minHeight: constraints.maxHeight),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: List.generate(
-                  quizzes.length,
-                  //(index) => ItemWidget(text: 'Item $index'),
-                  (index) {
-                    final quiz = quizzes[index];
-                    final title = quiz['title'] ?? 'Sin title';
-                    return ItemWidget(text: title);
-                  },
-                ),
-              ),
-            ),
-          );
-        },
-      ),
 
-      /*
-      body: ListView.builder(
-        itemCount: quizzes.length,
-        itemBuilder: (context, index) {
-          final quiz = quizzes[index];
-          return ListTile(
-            title: Text(quiz['titulo'] ?? 'Sin título'),
-            subtitle: Text('ID: ${quiz['id']}'),
-          );
-        },
-      ),
-      */
-    );
-  }
-}
 
 class ItemWidget extends StatelessWidget {
   const ItemWidget({super.key, required this.text});
