@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_quiz/data/api_questions.dart';
 
 //(paso 2) Texto que se mostrará en pantalla
 class StartScreen extends StatelessWidget {
@@ -25,7 +26,6 @@ class StartScreen extends StatelessWidget {
             style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
             //onPressed: () {},
             onPressed: startQuiz,
-
             //child: const Text('Start Quiz'),
             label: const Text('Start Quiz'),
           ),

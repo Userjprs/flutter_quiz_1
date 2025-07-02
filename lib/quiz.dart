@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_quiz/data/api_questions.dart';
 import 'package:flutter_quiz/screens/questions_screen.dart';
 import 'package:flutter_quiz/screens/start_screen.dart';
 
@@ -29,6 +30,7 @@ class _QuizState extends State<Quiz> {
     setState(() {
       //activeScreen = const QuestionsScreen();
       activeScreen = 'questions-screen';
+      //activeScreen = 'api-questions';
     });
   }
 
@@ -37,7 +39,8 @@ class _QuizState extends State<Quiz> {
     final screenWidget =
         activeScreen == 'start-screen'
             ? StartScreen(switchScreen)
-            : const QuestionsScreen();
+            //: const QuestionsScreen();
+            : const ApiQuestions();
     //viene de main la clase MaterialApp
     return MaterialApp(
       debugShowCheckedModeBanner: false, //quitar etiqueta DEBUG
